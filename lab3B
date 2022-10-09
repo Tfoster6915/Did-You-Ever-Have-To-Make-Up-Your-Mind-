@@ -1,0 +1,42 @@
+*// The narrative - 
+Imagine you only ever do three things at the weekend: go shopping, watch a movie, or just stay at home.  Which of these you do depends on three things: the weather (good or bad); how much money you have (rich or poor), and whether your parents are visiting. You say to yourself:  If my parents are visiting and the weather's bad, we'll stay in.  If they're visiting and the weather's good, we'll go to the cinema.  If they're not visiting and I'm poor, I'll stay in.  If they're not visiting and the weather is good and I'm rich, I'll go shopping.  Otherwise, I'll go to the cinema.
+Create a program that asks whether the parents are visiting, whether the weather is good and whether you are rich or poor.  Your program should print "go to the cinema" "go shopping" or "stay in" as appropriate.
+*//
+
+
+import java.util.Scanner;
+
+public class lab3B {
+
+	public static void main(String[] args) {
+		
+		try (// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in)) {
+			boolean parentsVisiting = true;
+			boolean weatherGood = true;
+			boolean imRich =true;
+			
+			//ask yes or no questions
+			System.out.print("Are Parent Visiting? Yes or No");
+			if (input.next().equals("No"))
+				parentsVisiting = false;
+			
+			System.out.print("Is the weather good? Yes or No");
+			if (input.next().equals("No"))
+				 weatherGood = false;
+			
+			System.out.print("Are you rich? Yes or No");
+			if (input.next().equals("No"))
+				 imRich = false;		
+			
+			System.out.println("What you should do is ");
+			
+				if (parentsVisiting && weatherGood && imRich) {
+					System.out.println("Go shopping!!");
+				} else if (!parentsVisiting && weatherGood && imRich) {
+					System.out.println("Go shopping!");
+				} else if (!parentsVisiting && weatherGood && !imRich) {
+					System.out.println("Stay in");
+				} else 
+					System.out.println("Go to movies!!");
+		
